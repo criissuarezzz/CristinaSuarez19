@@ -1,5 +1,5 @@
 #xbonacci sequence
-import random
+import random, unittest
 
 n=int(input("¿Cuántos números quieres como firma de la secuencia?: "))
 firma=[]
@@ -11,8 +11,15 @@ def xbonacci(firma, n):
     for i in range(n):
         firma.append(sum(firma[-n:]))
     return firma
+class testxbonacci(unittest.TestCase):
+    def testxbonacci(self):
+        self.assertEqual(xbonacci(firma,n))
+
 
 if __name__=='__main__':
-    print(xbonacci(firma,n))
+    xbonacci(firma,n)
+    unittest.main()
+    print("La secuencia es correcta")
+
         
     
