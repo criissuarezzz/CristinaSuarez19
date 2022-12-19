@@ -1,40 +1,33 @@
-dia=input("¿Que día es tu cumpleaños?: ")
-mes=input("¿Que mes es tu cumpleaños?(en número): ")
-for i in range(mes):
-    if mes=="Enero" or "enero":
-        mes=1
-    elif mes=="Febrero" or "febrero":
-        mes=2
-    elif mes=="Marzo" or "marzo":
-        mes=3
-    elif mes=="Abril" or "abril":
-        mes=4
-    elif mes=="Mayo" or "mayo":
-        mes=5
-    elif mes=="Junio" or "junio":
-        mes=6
-    elif mes=="Julio" or "julio":
-        mes=7
-    elif mes=="Agosto" or "agosto":
-        mes=8
-    elif mes=="Septiembre" or "septiembre":
-        mes=9
-    elif mes=="Octubre" or "octubre":
-        mes=10
-    elif mes=="Noviembre" or "noviembre":
-        mes=11
-    elif mes=="Diciembre" or "diciembre":
-        mes=12
-año=input("¿Que año naciste?: ")
+from datetime import datetime
+print("Hoy es", datetime.today())
+
+
+dia=int(input("¿Que día es tu cumpleaños?: "))
+mes=int(input("¿Que mes es tu cumpleaños?(en número): "))
+año=int(input("¿Que año naciste?: "))
+fechahoy=datetime.today()
 def cumpleaños(dia,mes,año):
     if dia in range(1,31) and mes in range(1,12) and año in range(1,2022):
-        return ("Tu cumpleaños es el "+str(dia)+"/"+str(mes)+"/"+str(año), "Tienes "+str(2019-año)+" años")
+        print("Tu cumpleaños es el "+str(dia)+"/"+str(mes)+"/"+str(año), "Tienes "+str(2022-fechahoy.year)+" años")
+        print("El día de hoy es el "+str(fechahoy.day)+"/"+str(fechahoy.month)+"/"+str(fechahoy.year))
     if año in range(1944,2000):
-        return "Estás en la edad para trabajar"
-    elif año in range(1999,2022):
-        return "Estás estudiando"
-    elif año in range(1,1943):
-        return "Estás jubilado"
+        print("Estás en la edad de trabajar")
+        #Sabemos que un año son 365 días, es decir 52 semanas y 1 día, queremos calcular los lunes que van a pasar desde el día que empezaste a trabajar hasta que te jubiles
+        #Los del 2000 se jubilarán en 2078, y los del 1944 en 2022
+        #sabemos entonces que hay que trabajar 56 años, (78-22) y que hay que calcular los lunes que van a pasar desde el día que empezaste a trabajar hasta que te jubiles
+        
+        print(365*56, "días de trabajo, desde los 22 hasta los 78 años")
+        edad=fechahoy.year-año #años vividos
+        añost=78-22 #años que se van a trabajar
+        trabajados=edad-22
+        print(añost-trabajados, "años que te quedan por trabajar")
+        quedan=365*(añost-trabajados)
+        print(quedan, "días que te quedan por trabajar")
+        print(quedan/7, "semanas que te quedan por trabajar")
+        print(quedan/7/7, "lunes que te quedan por trabajar")
     else:
-        return "No has nacido aún"
-print(cumpleaños(dia,mes,año))
+        print("No tienes edad para trabajar") 
+    
+
+if __name__=='__main__':
+    cumpleaños(dia,mes,año)
