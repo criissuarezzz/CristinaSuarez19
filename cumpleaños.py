@@ -1,11 +1,11 @@
 from datetime import datetime
-print("Hoy es", datetime.today())
+print("Hoy es", datetime.today())  #Para indicar la fecha de hoy
 
 
 dia=int(input("¿Que día es tu cumpleaños?: "))
 mes=int(input("¿Que mes es tu cumpleaños?(en número): "))
 año=int(input("¿Que año naciste?: "))
-fechahoy=datetime.today()
+fechahoy=datetime.today() 
 def cumpleaños(dia,mes,año):
     if dia in range(1,31) and mes in range(1,12) and año in range(1,2022):
         print("Tu cumpleaños es el "+str(dia)+"/"+str(mes)+"/"+str(año), "Tienes "+str(2022-fechahoy.year)+" años")
