@@ -1,34 +1,34 @@
 dia=input("¿Que día es tu cumpleaños?: ")
-mes=input("¿Que mes es tu cumpleaños?: ")
+mes=input("¿Que mes es tu cumpleaños?(en número): ")
+for i in range(mes):
+    if mes=="Enero" or "enero":
+        mes=1
+    elif mes=="Febrero" or "febrero":
+        mes=2
+    elif mes=="Marzo" or "marzo":
+        mes=3
+    elif mes=="Abril" or "abril":
+        mes=4
+    elif mes=="Mayo" or "mayo":
+        mes=5
+    elif mes=="Junio" or "junio":
+        mes=6
+    elif mes=="Julio" or "julio":
+        mes=7
+    elif mes=="Agosto" or "agosto":
+        mes=8
+    elif mes=="Septiembre" or "septiembre":
+        mes=9
+    elif mes=="Octubre" or "octubre":
+        mes=10
+    elif mes=="Noviembre" or "noviembre":
+        mes=11
+    elif mes=="Diciembre" or "diciembre":
+        mes=12
 año=input("¿Que año naciste?: ")
 def cumpleaños(dia,mes,año):
-    for i in range(mes):
-        if mes==1:
-            mes="Enero"
-        elif mes==2:
-            mes="Febrero"
-        elif mes==3:
-            mes="Marzo"
-        elif mes==4:
-            mes="Abril"
-        elif mes==5:
-            mes="Mayo"
-        elif mes==6:
-            mes="Junio"
-        elif mes==7:
-            mes="Julio"
-        elif mes==8:
-            mes="Agosto"
-        elif mes==9:
-            mes="Septiembre"
-        elif mes==10:
-            mes="Octubre"
-        elif mes==11:
-            mes="Noviembre"
-        elif mes==12:
-            mes="Diciembre"
     if dia in range(1,31) and mes in range(1,12) and año in range(1,2022):
-        return "Tu cumpleaños es el "+str(dia)+"/"+str(mes)+"/"+str(año), "Tienes "+str(2019-año)+" años".
+        return ("Tu cumpleaños es el "+str(dia)+"/"+str(mes)+"/"+str(año), "Tienes "+str(2019-año)+" años")
     if año in range(1944,2000):
         return "Estás en la edad para trabajar"
     elif año in range(1999,2022):
@@ -37,3 +37,4 @@ def cumpleaños(dia,mes,año):
         return "Estás jubilado"
     else:
         return "No has nacido aún"
+print(cumpleaños(dia,mes,año))
