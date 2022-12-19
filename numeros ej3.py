@@ -1,1 +1,1 @@
-from word2number import w2n
+from string import ascii_numbers
